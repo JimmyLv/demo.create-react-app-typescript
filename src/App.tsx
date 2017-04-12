@@ -1,5 +1,8 @@
 import * as React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { Button } from 'antd'
+
+import 'antd/dist/antd.css'
 
 const logo = require('./logo.svg')
 
@@ -40,6 +43,7 @@ class App extends React.PureComponent<{}, {}> {
           <Logo src={logo} alt="logo" />
           <h2>Welcome to React</h2>
         </Header>
+        <Button type="primary">Button</Button>
         <Intro>
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </Intro>
