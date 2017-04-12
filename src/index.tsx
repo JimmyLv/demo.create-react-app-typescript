@@ -127,11 +127,11 @@ const CountPage = connect(
   (state: AppState) => ({ count: state.count, number: 1 })
 )(CountApp)
 
-app.router(({ history }: RouterAPI) =>
+app.router(({ history }: RouterAPI) => (
   <Router history={history}>
     <Route path="/" component={App} />
     <Route path="/count" component={CountPage} />
   </Router>
-)
+))
 
 app.start('#root')
