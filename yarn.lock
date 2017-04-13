@@ -28,14 +28,14 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-router-redux@^4.0.34":
+"@types/react-router-redux@^4.0.34", "@types/react-router-redux@^4.0.40":
   version "4.0.45"
   resolved "https://registry.npmjs.org/@types/react-router-redux/-/react-router-redux-4.0.45.tgz#c9dbad35cbb450848be615331c6eeadd7e93964d"
   dependencies:
     "@types/history" "^3"
     redux "^3.6.0"
 
-"@types/react-router@^2.0.39":
+"@types/react-router@2.x", "@types/react-router@^2.0.39":
   version "2.0.49"
   resolved "https://registry.npmjs.org/@types/react-router/-/react-router-2.0.49.tgz#96f8ad51f07a5890ab35fd55f05170efd132552a"
   dependencies:
@@ -1298,10 +1298,12 @@ duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
-dva@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/dva/-/dva-1.2.1.tgz#b9e78a4f1812b2230134d1bb7baadd1af3630138"
+dva@next:
+  version "1.3.0-beta.3"
+  resolved "https://registry.npmjs.org/dva/-/dva-1.3.0-beta.3.tgz#e578c56748bf85f7ed9dcbd02c8e362612e7f709"
   dependencies:
+    "@types/react-router" "2.x"
+    "@types/react-router-redux" "^4.0.40"
     babel-runtime "^6.11.6"
     flatten "^1.0.2"
     global "^4.3.1"

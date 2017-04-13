@@ -1,7 +1,7 @@
 import * as React from 'react'
+import * as key from 'keymaster'
 import { Router, Route } from 'dva/router'
 import styled, { injectGlobal } from 'styled-components'
-import key from 'keymaster'
 
 import dva, {
   connect,
@@ -36,7 +36,7 @@ declare interface AppState {
 }
 
 const MINUS_TYPE: string = 'minus'
-const ADD_TYPE: string = 'minus'
+const ADD_TYPE: string = 'add'
 
 app.model({
   namespace: 'count',
