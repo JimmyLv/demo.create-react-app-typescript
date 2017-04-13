@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@types/history@^2", "@types/history@^2.0.39":
+"@types/history@^2":
   version "2.0.48"
   resolved "https://registry.npmjs.org/@types/history/-/history-2.0.48.tgz#7e2868c3ad73d83c482f1d68f148c4fdc79c8a79"
 
@@ -28,14 +28,14 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-router-redux@^4.0.34", "@types/react-router-redux@^4.0.40":
+"@types/react-router-redux@^4.0.40":
   version "4.0.45"
   resolved "https://registry.npmjs.org/@types/react-router-redux/-/react-router-redux-4.0.45.tgz#c9dbad35cbb450848be615331c6eeadd7e93964d"
   dependencies:
     "@types/history" "^3"
     redux "^3.6.0"
 
-"@types/react-router@2.x", "@types/react-router@^2.0.39":
+"@types/react-router@2.x":
   version "2.0.49"
   resolved "https://registry.npmjs.org/@types/react-router/-/react-router-2.0.49.tgz#96f8ad51f07a5890ab35fd55f05170efd132552a"
   dependencies:
@@ -1297,6 +1297,12 @@ duplexer3@^0.1.4:
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
+
+dva-loading@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/dva-loading/-/dva-loading-0.2.1.tgz#fad76b8eeb28c3663a2ee1874cc118702940c63c"
+  dependencies:
+    babel-runtime "^6.11.6"
 
 dva@next:
   version "1.3.0-beta.3"
