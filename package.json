@@ -27,7 +27,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "lint": "tslint src/**/*.tsx",
-    "push": "npm run build; cd build; git init; git add -A; timestamp=$(date \"+%c\") && git commit -m \"Automated deployment at $timestamp\"; git push -f git@github.com:JimmyLv/demo.create-react-app-typescript.git master:gh-pages",
+    "push": "npm run build; cd build; git init; sed -i .bak 's/\\\"\\//\\\"\\.\\//g' index.html; git add -A; timestamp=$(date \"+%c\") && git commit -m \"Automated deployment at $timestamp\"; git push -f git@github.com:JimmyLv/demo.create-react-app-typescript.git master:gh-pages; cd ..",
     "deploy": "npm run build && surge build dva.jimmylv.info"
   }
 }
