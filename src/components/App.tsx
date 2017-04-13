@@ -4,7 +4,7 @@ import { Button } from 'antd'
 
 import 'antd/dist/antd.css'
 
-const logo = require('./logo.svg')
+const logo = require('./../assets/logo.svg')
 
 declare interface WrapperProps {
   center: boolean

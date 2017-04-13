@@ -11,7 +11,7 @@ import dva, {
 import { Action, Dispatch } from 'redux'
 // import { FSA } from 'flux-standard-action'
 
-import App from './App'
+import App from './components/App'
 
 /* tslint:disable */
 injectGlobal`body {
