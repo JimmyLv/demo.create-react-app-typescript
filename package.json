@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts-ts": "1.1.8"
+    "gh-pages-deploy": "^0.4.2",
+    "react-scripts-ts": "1.1.8",
+    "surge": "^0.19.0"
   },
   "dependencies": {
     "@types/jest": "^19.2.2",
@@ -15,7 +17,6 @@
     "antd": "^2.9.1",
     "dva": "next",
     "dva-loading": "^0.2.1",
-    "flux-standard-action": "^1.2.0",
     "keymaster": "^1.6.2",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
@@ -27,7 +28,14 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "lint": "tslint src/**/*.tsx",
-    "deploy": "npm run build && gh-pages-deploy",
+    "deploy": "gh-pages-deploy",
     "deploy:dva": "npm run build && surge build dva.jimmylv.info"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "build",
+    "prep": [
+      "npm run build"
+    ],
+    "noprompt": true
   }
 }
