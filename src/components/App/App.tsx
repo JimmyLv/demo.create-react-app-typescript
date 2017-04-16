@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import { Button } from 'antd'
 
 const Wrapper = styled.div`
-  text-align: ${(props: WrapperProps) => props.center ? 'center' : 'left'};
+  text-align: ${(props: { center: boolean }) => props.center ? 'center' : 'left'};
 `
 const Header = styled.div`
   background-color: #222;
@@ -25,23 +25,17 @@ const Intro = styled.p`
   font-size: large;
 `
 
-interface WrapperProps {
-  center: boolean
-}
-
-function App() {
-  return (
-    <Wrapper center={true}>
-      <Header>
-        <Logo alt="logo" />
-        <h2>Welcome to React</h2>
-      </Header>
-      <Button type="primary">Button</Button>
-      <Intro>
-        To get started, edit <code>src/App.tsx</code> and save to reload.
-      </Intro>
-    </Wrapper>
-  )
-}
+const App: React.SFC<{}> = () => (
+  <Wrapper center={true}>
+    <Header>
+      <Logo alt="logo" />
+      <h2>Welcome to React</h2>
+    </Header>
+    <Button type="primary">Button</Button>
+    <Intro>
+      To get started, edit <code>src/App.tsx</code> and save to reload.
+    </Intro>
+  </Wrapper>
+)
 
 export default App

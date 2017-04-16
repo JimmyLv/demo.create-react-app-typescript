@@ -33,22 +33,18 @@ const Button = styled.button`
   color: #fff;
 `
 
-declare interface CountProps {
+const Count: React.SFC<{
   count: CountState
   dispatch: Dispatch<AppState>
-}
-
-const Count: React.StatelessComponent<CountProps> = ({ count, dispatch }) => {
-  return (
-    <Wrapper>
-      <Record>Highest Record: {count.record}</Record>
-      <Current>{count.current}</Current>
-      <StyledButton>
-        <Button onClick={() => dispatch({ type: 'count/add' })}>+</Button>
-      </StyledButton>
-    </Wrapper>
-  )
-}
+}> = ({ count, dispatch }) => (
+  <Wrapper>
+    <Record>Highest Record: {count.record}</Record>
+    <Current>{count.current}</Current>
+    <StyledButton>
+      <Button onClick={() => dispatch({ type: 'count/add' })}>+</Button>
+    </StyledButton>
+  </Wrapper>
+)
 
 export default connect(
   (state: AppState) => ({ count: state.count, number: 1 })

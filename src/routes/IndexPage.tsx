@@ -10,17 +10,14 @@ const Wrapper = styled.div`
   margin: 3em auto 0;
 `
 
-interface IndexPageProps {
+const IndexPage: React.SFC<{
   location: Location
-}
-function IndexPage({ location }: IndexPageProps) {
-  return (
-    <MainLayout location={location}>
-      <Wrapper>
-        <App />
-      </Wrapper>
-    </MainLayout>
-  )
-}
+}> = ({ location }) => (
+  <MainLayout location={location}>
+    <Wrapper>
+      <App />
+    </Wrapper>
+  </MainLayout>
+)
 
 export default connect()(IndexPage)

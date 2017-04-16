@@ -3,15 +3,12 @@ import MainLayout from '../components/MainLayout/MainLayout'
 import Count from '../components/Count/Count'
 import { Location } from 'history'
 
-interface IndexPageProps {
+const CountPage: React.SFC<{
   location: Location
-}
-function CountPage({ location }: IndexPageProps) {
-  return (
-    <MainLayout location={location}>
-      <Count />
-    </MainLayout>
-  )
-}
+}> = ({ location }) => (
+  <MainLayout location={location}>
+    <Count />
+  </MainLayout>
+)
 
 export default CountPage

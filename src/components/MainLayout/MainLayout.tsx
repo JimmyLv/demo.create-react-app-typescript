@@ -17,22 +17,17 @@ const Main = styled.div`
   flex: 1 0 auto;
 `
 
-interface MainLayoutProps {
-  children?: React.ReactElement<{}>
+const MainLayout: React.SFC<{
   location: Location
-}
-
-function MainLayout({ children, location }: MainLayoutProps) {
-  return (
-    <Wrapper>
-      <Header location={location} />
-      <Content>
-        <Main>
-          {children}
-        </Main>
-      </Content>
-    </Wrapper>
-  )
-}
+}> = ({ location, children }) => (
+  <Wrapper>
+    <Header location={location} />
+    <Content>
+      <Main>
+        {children}
+      </Main>
+    </Content>
+  </Wrapper>
+)
 
 export default MainLayout
