@@ -19,7 +19,7 @@ const Logo = styled.img`
   animation: ${spin} infinite 20s linear;
   width: 100px;
   height: 80px;
-  background: url(./assets/logo.svg) no-repeat;
+  background: url('./assets/logo.svg') no-repeat;
 `
 const Intro = styled.p`
   font-size: large;
