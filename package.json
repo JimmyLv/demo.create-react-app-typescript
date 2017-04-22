@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "json-server": "^0.9.6",
     "react-scripts-ts": "^1.2.0",
     "surge": "^0.19.0"
   },
@@ -26,6 +27,7 @@
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
+    "mock": "json-server http://jsonplaceholder.typicode.com/db -p 3001",
     "lint": "tslint src/**/*.tsx",
     "push": "npm run build; cd build; git init; sed -i .bak 's/\\\"\\//\\\"\\.\\//g' index.html; git add -A; timestamp=$(date \"+%c\") && git commit -m \"Automated deployment at $timestamp\"; git push -f git@github.com:JimmyLv/demo.create-react-app-typescript.git master:gh-pages; cd ..",
     "deploy": "npm run build && surge build dva.jimmylv.info"
