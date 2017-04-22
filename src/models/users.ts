@@ -3,7 +3,7 @@ import { FSA } from 'flux-standard-action'
 import { retrieve } from '../service/users'
 import { Location } from 'history'
 
-interface User {
+export interface User {
   id: number
   name: string
   username: string
@@ -11,7 +11,7 @@ interface User {
   website: string
 }
 
-export declare interface UsersState {
+export interface UsersState {
   list: Array<User>
   total: number
   page: number
