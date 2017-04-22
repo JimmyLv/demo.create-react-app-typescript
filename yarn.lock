@@ -10,6 +10,10 @@
   version "3.2.1"
   resolved "https://registry.npmjs.org/@types/history/-/history-3.2.1.tgz#0039ab0e0be2a0cc22bac171d27a44588103d123"
 
+"@types/isomorphic-fetch@^0.0.33":
+  version "0.0.33"
+  resolved "https://registry.npmjs.org/@types/isomorphic-fetch/-/isomorphic-fetch-0.0.33.tgz#3ea1b86f8b73e6a7430d01d4dbd5b1f63fd72718"
+
 "@types/jest@^19.2.2":
   version "19.2.2"
   resolved "https://registry.npmjs.org/@types/jest/-/jest-19.2.2.tgz#71f428be2fa6eb9f15bb0abc3cade67905f94839"

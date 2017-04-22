@@ -1,6 +1,7 @@
-import fetch, { Response, RequestInfo, RequestInit } from 'dva/fetch'
+import { RequestInfo, RequestInit } from 'dva/fetch'
 
-function checkStatus(response: Response) {
+// tslint:disable-next-line
+function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response
   }
@@ -10,16 +11,8 @@ function checkStatus(response: Response) {
   throw error
 }
 
-/**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
- */
-
 const request = async (url: RequestInfo, options?: RequestInit) => {
-  const response: Response = await fetch(`http://localhost:3001${url}`, options)
+  const response = await fetch(`http://localhost:3001${url}`, options)
 
   checkStatus(response)
 
