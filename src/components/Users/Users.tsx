@@ -4,15 +4,18 @@ import { connect } from 'dva'
 import styled from 'styled-components'
 
 import { AppState } from '../../models/appState'
+import { Table } from 'antd'
 
 const Wrapper = styled.div`
 `
 
 const Count: React.SFC<{
-  users: Array<number>
+  list: Array<number>
   dispatch: Dispatch<AppState>
-}> = ({ users, dispatch }) => (
-  <Wrapper>Hello Users</Wrapper>
+}> = ({ list: dataSource, dispatch }) => (
+  <Wrapper>
+    <Table />
+  </Wrapper>
 )
 
 export default connect(
