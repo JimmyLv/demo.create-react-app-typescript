@@ -19,7 +19,7 @@ function checkStatus(response: Response) {
  */
 
 const request = async (url: RequestInfo, options?: RequestInit) => {
-  const response: Response = await fetch(url, options)
+  const response: Response = await fetch(`http://localhost:3001${url}`, options)
 
   checkStatus(response)
 
