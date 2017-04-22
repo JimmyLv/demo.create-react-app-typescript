@@ -47,7 +47,8 @@ const Count: React.SFC<{
     }, {
       title: 'Website',
       dataIndex: 'website',
-      key: 'website'
+      key: 'website',
+      render: text => <a href={`http://${text}`}>{text}</a>
     },
     {
       title: 'Operation',
