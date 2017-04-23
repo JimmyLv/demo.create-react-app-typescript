@@ -5,7 +5,7 @@ import { ADD_TYPE, MINUS_TYPE } from '../constants'
 
 const delay = (timeout: number) => new Promise<number>(resolve => setTimeout(resolve, timeout))
 
-export declare interface CountState {
+export interface CountState {
   record: number
   current: number
 }

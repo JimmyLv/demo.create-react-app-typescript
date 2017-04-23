@@ -1,7 +1,7 @@
 import { CountState } from './count'
 import { UsersState } from './users'
 
-export declare interface AppState {
+export interface AppState {
   count: CountState
   users: UsersState
   loading: {
