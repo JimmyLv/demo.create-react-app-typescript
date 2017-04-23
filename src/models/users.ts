@@ -43,6 +43,10 @@ const users: Model = {
         }
       })
     },
+    *create({ payload: values }: FSA<User, {}>, { call, put }: EffectsCommandMap) {
+      yield call(usersService.create, values)
+      yield put({ type: 'reload' })
+    },
     *remove({ payload: id }: FSA<number, {}>, { call, put }: EffectsCommandMap) {
       yield call(usersService.remove, id)
       yield put({ type: 'reload' })

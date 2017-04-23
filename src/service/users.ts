@@ -6,6 +6,13 @@ export function retrieve({ page = 1 }: { page: number }) {
   return request(`/api/users?_page=${page}&_limit=${PAGE_SIZE}`)
 }
 
+export function create(values: User) {
+  return request(`/api/users`, {
+    method: 'POST',
+    body: JSON.stringify(values)
+  })
+}
+
 export function patch(id: number, values: User) {
   return request(`/api/users/${id}`, {
     method: 'PATCH',

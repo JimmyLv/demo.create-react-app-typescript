@@ -3,7 +3,7 @@ import { Dispatch } from 'redux'
 import { connect } from 'dva'
 import { routerRedux } from 'dva/router'
 import styled from 'styled-components'
-import { Table, Popconfirm, Pagination } from 'antd'
+import { Button, Table, Popconfirm, Pagination } from 'antd'
 
 import { AppState } from '../../models/appState'
 import { User } from '../../models/users'
@@ -14,12 +14,13 @@ class UserTable extends Table<User> {
 }
 
 const Wrapper = styled.div`
+  margin-top: 0.5em;
 `
-// const Create = styled.span`
-//   margin-bottom: 1.5em;
-// `
 const Operation = styled.span`
   margin: 0.5em;
+`
+const StyledButton = styled(Button)`
+  margin-bottom: 0.5em !important;
 `
 const StyledPagination = styled(Pagination)`
   margin-top: 0.5em;
@@ -52,6 +53,13 @@ const Count: React.SFC<{
     dispatch({
       type: 'users/patch',
       payload: { id, values }
+    })
+  }
+
+  function createUser(values: User) {
+    dispatch({
+      type: 'users/create',
+      payload: values
     })
   }
 
@@ -92,6 +100,12 @@ const Count: React.SFC<{
 
   return (
     <Wrapper>
+      <UserModal
+        record={{}}
+        onOk={(values) => createUser(values)}
+      >
+        <StyledButton type="primary">Create User</StyledButton>
+      </UserModal>
       <UserTable
         columns={columns}
         dataSource={dataSource}
