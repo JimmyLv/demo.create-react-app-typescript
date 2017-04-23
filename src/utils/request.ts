@@ -1,4 +1,5 @@
 import { RequestInfo, RequestInit } from 'dva/fetch'
+import { BASE_URL } from '../constants'
 
 // tslint:disable-next-line
 function checkStatus(response) {
@@ -12,7 +13,7 @@ function checkStatus(response) {
 }
 
 const request = async (url: RequestInfo, options?: RequestInit) => {
-  const response = await fetch(`http://localhost:3001${url}`, options)
+  const response = await fetch(BASE_URL + url, options)
 
   checkStatus(response)
 

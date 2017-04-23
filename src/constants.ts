@@ -4,3 +4,7 @@ export const PAGE_SIZE: number = 3
 // action type
 export const MINUS_TYPE: string = 'minus'
 export const ADD_TYPE: string = 'add'
+
+export const BASE_URL = process.env.NODE_ENV === 'production' ?
+  'http://jsonplaceholder.typicode.com/' :
+  'http://localhost:3001'

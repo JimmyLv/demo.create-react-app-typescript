@@ -22,6 +22,10 @@
   version "1.6.28"
   resolved "https://registry.npmjs.org/@types/keymaster/-/keymaster-1.6.28.tgz#093fc6fe49deff4ee17d36935a49230edb1c935f"
 
+"@types/node@^7.0.13":
+  version "7.0.13"
+  resolved "https://registry.npmjs.org/@types/node/-/node-7.0.13.tgz#1b0a53fe9ef9c3a5d061b126cc9b915bca43a3f5"
+
 "@types/react-dom@^15.5.0":
   version "15.5.0"
   resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-15.5.0.tgz#7f4fb9613d4051141773242f7b6b5f1a46b34bd9"

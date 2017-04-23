@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { Button } from 'antd'
+import { BASE_URL } from '../../constants'
 
 const Wrapper = styled.div`
   text-align: ${(props: { center: boolean }) => props.center ? 'center' : 'left'};
@@ -24,6 +25,9 @@ const Logo = styled.img`
 const Intro = styled.p`
   font-size: large;
 `
+const StyledButton = styled(Button)`
+  margin: 0.5em;
+`
 
 const App: React.SFC<{}> = () => (
   <Wrapper center={true}>
@@ -31,7 +35,12 @@ const App: React.SFC<{}> = () => (
       <Logo alt="logo" />
       <h2>Welcome to React</h2>
     </Header>
-    <Button type="primary">Button</Button>
+    <StyledButton
+      type="primary"
+      onClick={() => alert(`Current api: ${BASE_URL}`)}
+    >
+      Button
+    </StyledButton>
     <Intro>
       To get started, edit <code>src/App.tsx</code> and save to reload.
     </Intro>
