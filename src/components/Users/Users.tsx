@@ -90,7 +90,7 @@ const Count: React.SFC<{
         current={current}
         pageSize={PAGE_SIZE}
         pageSizeOptions={[PAGE_SIZE.toString()]}
-        onChange={(i) => changePagination(i)}
+        onChange={(page) => changePagination(page)}
       />
     </Wrapper>
   )
