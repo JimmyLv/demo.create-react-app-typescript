@@ -21,6 +21,10 @@ const Wrapper = styled.div`
 const Operation = styled.span`
   margin: 0.5em;
 `
+const StyledPagination = styled(Pagination)`
+  margin-top: 0.5em;
+  float: right;
+`
 
 const Count: React.SFC<{
   list: Array<User>
@@ -95,7 +99,7 @@ const Count: React.SFC<{
         rowKey={record => record.id.toString()}
         pagination={false}
       />
-      <Pagination
+      <StyledPagination
         total={total}
         current={current}
         pageSize={PAGE_SIZE}

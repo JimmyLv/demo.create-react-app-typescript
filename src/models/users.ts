@@ -1,6 +1,8 @@
 import { EffectsCommandMap, Model, SubscriptionAPI } from 'dva'
 import { FSA } from 'flux-standard-action'
-import { retrieve } from '../service/users'
+
+import * as usersService from '../service/users'
+import { AppState } from './appState'
 
 export interface User {
   id: number
@@ -31,7 +33,7 @@ const users: Model = {
   },
   effects: {
     *fetch({ payload: { page = '1' } }: FSA<{ page: string }, {}>, { call, put }: EffectsCommandMap) {
-      const { data, headers } = yield call(retrieve, { page })
+      const { data, headers } = yield call(usersService.retrieve, { page })
       yield put({
         type: 'save',
         payload: {
@@ -40,6 +42,18 @@ const users: Model = {
           page: parseInt(page, 10)
         }
       })
+    },
+    *remove({ payload: id }: FSA<number, {}>, { call, put }: EffectsCommandMap) {
+      yield call(usersService.remove, id)
+      yield put({ type: 'reload' })
+    },
+    *patch({ payload: { id, values } }: FSA<{ id: number, values: User }, {}>, { call, put }: EffectsCommandMap) {
+      yield call(usersService.patch, id, values)
+      yield put({ type: 'reload' })
+    },
+    *reload(action: FSA<{}, {}>, { put, select }: EffectsCommandMap) {
+      const page = yield select((state: AppState) => state.users.page)
+      yield put({ type: 'fetch', payload: { page } })
     }
   },
   subscriptions: {
