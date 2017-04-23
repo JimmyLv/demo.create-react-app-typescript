@@ -2,6 +2,8 @@
   "name": "create-react-app-typescript",
   "version": "0.1.0",
   "private": true,
+  "repo": "https://github.com/JimmyLv/demo.create-react-app-typescript",
+  "homepage": "https://jimmylv.github.io/demo.create-react-app-typescript/",
   "devDependencies": {
     "json-server": "^0.9.6",
     "react-scripts-ts": "^1.2.0",
