@@ -1,7 +1,6 @@
 import { EffectsCommandMap, Model, SubscriptionAPI } from 'dva'
 import { FSA } from 'flux-standard-action'
 import { retrieve } from '../service/users'
-import { Location } from 'history'
 
 export interface User {
   id: number
@@ -31,21 +30,21 @@ const users: Model = {
     }
   },
   effects: {
-    *fetch({ payload: { page = 1 } }: FSA<{ page: number }, {}>, { call, put }: EffectsCommandMap) {
+    *fetch({ payload: { page = '1' } }: FSA<{ page: string }, {}>, { call, put }: EffectsCommandMap) {
       const { data, headers } = yield call(retrieve, { page })
       yield put({
         type: 'save',
         payload: {
           data,
           total: parseInt(headers['x-total-count'], 10),
-          page
+          page: parseInt(page, 10)
         }
       })
     }
   },
   subscriptions: {
     setup({ dispatch, history }: SubscriptionAPI) {
-      return history.listen((location: Location) => {
+      return history.listen((location: { pathname: string, query: string }) => {
         const { pathname, query } = location
         if (pathname === '/users') {
           dispatch({ type: 'fetch', payload: query })

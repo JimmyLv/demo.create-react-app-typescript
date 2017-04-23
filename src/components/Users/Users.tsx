@@ -4,8 +4,10 @@ import { connect } from 'dva'
 import styled from 'styled-components'
 
 import { AppState } from '../../models/appState'
-import { Table, Popconfirm } from 'antd'
+import { Table, Popconfirm, Pagination } from 'antd'
 import { User } from '../../models/users'
+import { PAGE_SIZE } from '../../constants'
+import { routerRedux } from 'dva/router'
 
 class UserTable extends Table<User> {
 }
@@ -32,6 +34,14 @@ const Count: React.SFC<{
       type: 'users/remove',
       payload: id
     })
+  }
+
+  function changePagination(page: number) {
+    alert(page)
+    dispatch(routerRedux.push({
+      pathname: '/users',
+      query: { page }
+    }))
   }
 
   const columns = [
@@ -74,6 +84,13 @@ const Count: React.SFC<{
         loading={loading}
         rowKey={record => record.id.toString()}
         pagination={false}
+      />
+      <Pagination
+        total={total}
+        current={current}
+        pageSize={PAGE_SIZE}
+        pageSizeOptions={[PAGE_SIZE.toString()]}
+        onChange={(i) => changePagination(i)}
       />
     </Wrapper>
   )
