@@ -32,7 +32,7 @@ const users: Model = {
     }
   },
   effects: {
-    *fetch({ payload: { page = '1' } }: FSA<{ page: string }, {}>, { call, put }: EffectsCommandMap) {
+    *fetch({ payload: page = '1' }: FSA<string, {}>, { call, put }: EffectsCommandMap) {
       const { data, headers } = yield call(usersService.retrieve, { page })
       yield put({
         type: 'save',
@@ -62,10 +62,10 @@ const users: Model = {
   },
   subscriptions: {
     setup({ dispatch, history }: SubscriptionAPI) {
-      return history.listen((location: { pathname: string, query: string }) => {
+      return history.listen((location: { pathname: string, query: { page: string } }) => {
         const { pathname, query } = location
         if (pathname === '/users') {
-          dispatch({ type: 'fetch', payload: query })
+          dispatch({ type: 'fetch', payload: query.page })
         }
       })
     }
