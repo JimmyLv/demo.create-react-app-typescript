@@ -33,7 +33,6 @@
     "eject": "react-scripts-ts eject",
     "mock": "json-server http://jsonplaceholder.typicode.com/db -p 3001 -r routes.json",
     "lint": "tslint src/**/*.tsx",
-    "push": "npm run build; cd build; git init; sed -i .bak 's/\\\"\\//\\\"\\.\\//g' index.html; git add -A; timestamp=$(date \"+%c\") && git commit -m \"Automated deployment at $timestamp\"; git push -f git@github.com:JimmyLv/demo.create-react-app-typescript.git master:gh-pages; cd ..",
-    "deploy": "npm run build && surge build dva.jimmylv.info"
+    "deploy": "npm run build; surge build dva.jimmylv.info; cd build; git init; sed -i .bak 's/\\\"\\//\\\"\\.\\//g' index.html; git add -A; timestamp=$(date \"+%c\") && git commit -m \"Automated deployment at $timestamp\"; git push -f git@github.com:JimmyLv/demo.create-react-app-typescript.git master:gh-pages; cd .."
   }
 }

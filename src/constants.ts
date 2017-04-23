@@ -6,5 +6,5 @@ export const MINUS_TYPE: string = 'minus'
 export const ADD_TYPE: string = 'add'
 
 export const BASE_URL = process.env.NODE_ENV === 'production' ?
-  'http://jsonplaceholder.typicode.com/db' :
+  'https://jsonplaceholder.typicode.com/db' :
   'http://localhost:3001'
