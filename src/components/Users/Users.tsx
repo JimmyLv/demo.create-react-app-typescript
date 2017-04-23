@@ -1,13 +1,14 @@
 import * as React from 'react'
 import { Dispatch } from 'redux'
 import { connect } from 'dva'
+import { routerRedux } from 'dva/router'
 import styled from 'styled-components'
+import { Table, Popconfirm, Pagination } from 'antd'
 
 import { AppState } from '../../models/appState'
-import { Table, Popconfirm, Pagination } from 'antd'
 import { User } from '../../models/users'
 import { PAGE_SIZE } from '../../constants'
-import { routerRedux } from 'dva/router'
+import { default as UserModal } from './UserModal'
 
 class UserTable extends Table<User> {
 }
@@ -29,6 +30,13 @@ const Count: React.SFC<{
   dispatch: Dispatch<AppState>
 }> = ({ list: dataSource, loading, total, page: current, dispatch }) => {
 
+  function changePagination(page: number) {
+    dispatch(routerRedux.push({
+      pathname: '/users',
+      query: { page }
+    }))
+  }
+
   function deleteUser(id: number) {
     dispatch({
       type: 'users/remove',
@@ -36,12 +44,11 @@ const Count: React.SFC<{
     })
   }
 
-  function changePagination(page: number) {
-    alert(page)
-    dispatch(routerRedux.push({
-      pathname: '/users',
-      query: { page }
-    }))
+  function editUser(id: number, values: User) {
+    dispatch({
+      type: 'users/patch',
+      payload: { id, values }
+    })
   }
 
   const columns = [
@@ -65,6 +72,9 @@ const Count: React.SFC<{
       key: 'operation',
       render: (text, record) => (
         <Operation>
+          <UserModal record={record} onOk={(values) => editUser(record.id, values)}>
+            <a>Edit </a>
+          </UserModal>
           <Popconfirm
             title="Confirm to delete?"
             onConfirm={() => deleteUser(record.id)}
