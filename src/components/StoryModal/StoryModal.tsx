@@ -72,19 +72,21 @@ class StoryModal extends React.Component<{
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label>Name</label>
-                <input type="text"
-                       value={this.state.author}
-                       onChange={(e) => this.handleInputChange(e)}
-                       id="author"
-                       className="form-control" />
+                <input
+                  id="author"
+                  type="text"
+                  value={this.state.author}
+                  onChange={(e) => this.handleInputChange(e)}
+                  className="form-control"
+                />
               </div>
               <div className="form-group">
                 <label>Content</label>
                 <textarea
+                  id="content"
                   value={this.state.content}
                   onChange={(e) => this.handleInputChange(e)}
                   cols={30}
-                  id="content"
                   className="form-control"
                 />
               </div>
