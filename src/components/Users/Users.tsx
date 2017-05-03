@@ -1,13 +1,13 @@
-import * as React from 'react'
-import { Dispatch } from 'redux'
+import { Button, Pagination, Popconfirm, Table } from 'antd'
 import { connect } from 'dva'
 import { routerRedux } from 'dva/router'
+import * as React from 'react'
+import { Dispatch } from 'redux'
 import styled from 'styled-components'
-import { Button, Table, Popconfirm, Pagination } from 'antd'
 
+import { PAGE_SIZE } from '../../constants'
 import { AppState } from '../../models/appState'
 import { User } from '../../models/users'
-import { PAGE_SIZE } from '../../constants'
 import { default as UserModal } from './UserModal'
 
 class UserTable extends Table<User> {

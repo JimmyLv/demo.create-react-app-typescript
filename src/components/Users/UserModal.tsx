@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { Input, Modal, Form } from 'antd'
+import { Form, Input, Modal } from 'antd'
 import { WrappedFormUtils } from 'antd/lib/form/Form'
+import * as React from 'react'
 
 import { User } from '../../models/users'
 
