@@ -20,6 +20,9 @@ const Header: React.SFC<{
     <Menu.Item key="/count">
       <Link to="/count"><Icon type="bars" />Count</Link>
     </Menu.Item>
+    <Menu.Item key="/stories">
+      <Link to="/stories"><Icon type="bars" />Stories</Link>
+    </Menu.Item>
     <Menu.Item key="/404">
       <Link to="/page-you-dont-know"><Icon type="frown-circle" />404</Link>
     </Menu.Item>

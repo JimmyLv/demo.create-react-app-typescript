@@ -15,6 +15,7 @@ import UsersPage from './routes/UsersPage'
 
 import 'antd/dist/antd.css'
 import NotFoundPage from './routes/NotFoundPage'
+import StoryPage from './routes/StoryPage'
 
 /* tslint:disable */
 injectGlobal`body {
@@ -42,6 +43,7 @@ app.router(({ history }: RouterAPI) => (
     <Route path="/" component={IndexPage} />
     <Route path="/count" component={CountPage} />
     <Route path="/users" component={UsersPage} />
+    <Route path="/stories" component={StoryPage} />
     <Route path="/*" component={NotFoundPage} />
   </Router>
 ))
