@@ -6,7 +6,7 @@
   "bugs": "https://github.com/JimmyLv/demo.create-react-app-typescript/issues",
   "devDependencies": {
     "json-server": "^0.9.6",
-    "react-scripts-ts": "^1.2.0",
+    "react-scripts-ts": "^1.4.0",
     "surge": "^0.19.0"
   },
   "dependencies": {
