@@ -33,7 +33,7 @@ const countModel: Model = {
     }
   },
   effects: {
-    *add(action: Action, { call, put }: EffectsCommandMap) {
+    *[ADD_TYPE](action: Action, { call, put }: EffectsCommandMap) {
       yield call(delay, 1000)
       yield put({ type: MINUS_TYPE })
     }

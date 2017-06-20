@@ -4,6 +4,15 @@
   "private": true,
   "repository": "https://github.com/JimmyLv/demo.create-react-app-typescript",
   "bugs": "https://github.com/JimmyLv/demo.create-react-app-typescript/issues",
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "mock": "json-server http://jsonplaceholder.typicode.com/db -p 3001 -r routes.json",
+    "lint": "tslint src/**/*.tsx",
+    "deploy": "npm run build; surge build dva.jimmylv.info; cd build; git init; sed -i .bak 's/\\\"\\//\\\"\\.\\//g' index.html; git add -A; timestamp=$(date \"+%c\") && git commit -m \"Automated deployment at $timestamp\"; git push -f git@github.com:JimmyLv/demo.create-react-app-typescript.git master:gh-pages; cd .."
+  },
   "devDependencies": {
     "json-server": "^0.9.6",
     "react-scripts-ts": "^1.4.0",
@@ -29,14 +38,5 @@
     "react-flip-move": "^2.9.3",
     "react-modal": "^1.7.7",
     "styled-components": "^1.4.4"
-  },
-  "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject",
-    "mock": "json-server http://jsonplaceholder.typicode.com/db -p 3001 -r routes.json",
-    "lint": "tslint src/**/*.tsx",
-    "deploy": "npm run build; surge build dva.jimmylv.info; cd build; git init; sed -i .bak 's/\\\"\\//\\\"\\.\\//g' index.html; git add -A; timestamp=$(date \"+%c\") && git commit -m \"Automated deployment at $timestamp\"; git push -f git@github.com:JimmyLv/demo.create-react-app-typescript.git master:gh-pages; cd .."
   }
 }
